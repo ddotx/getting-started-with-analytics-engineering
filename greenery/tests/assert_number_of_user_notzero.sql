@@ -1,0 +1,1 @@
+select user_counts from {{ref('user_count')}} where user_counts > 0
