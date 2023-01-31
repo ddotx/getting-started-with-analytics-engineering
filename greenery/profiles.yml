@@ -1,0 +1,23 @@
+greenery:
+  outputs:
+    dbt_ddotx:
+      type: postgres
+      threads: 1
+      host: localhost
+      port: 5432
+      user: postgres
+      pass: "{{ env_var('DBT_ENV_SECRET_PG_PASSWORD') }}"
+      dbname: greenery
+      schema: dbt_ddotx
+
+    prod:
+      type: postgres
+      threads: 1
+      host: localhost
+      port: 5432
+      user: postgres
+      pass: "{{ env_var('DBT_ENV_SECRET_PG_PASSWORD') }}"
+      dbname: greenery
+      schema: prod
+
+  target: dbt_ddotx
