@@ -20,4 +20,13 @@ greenery:
       dbname: greenery
       schema: prod
 
+    prod_bigquery:
+      type: bigquery
+      method: service-account
+      project: dataengineercafe
+      dataset: greenery
+      threads: 1
+      keyfile: "{{ env_var('DBT_ENV_SECRET_GCP_KEYFILE_PATH') }}"
+      location: asia-southeast1
+
   target: dbt_zkan
